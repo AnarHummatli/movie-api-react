@@ -1,0 +1,49 @@
+.movies-box {
+    width: 50vw;
+    margin-left: 2vw;
+    padding-bottom: 1.25vw;
+    border-radius: 1.2vw;
+    border: 0.1vw solid darkred;
+}
+
+.movie-card {
+    width: 95%;
+    height: 28vw;
+    display: flex;
+    align-items: center;
+    gap: 2.7vw;
+}
+
+.movie-card img {
+    align-self: flex-start;
+    height: 26.75vw;
+    margin-left: 1.25vw;
+    margin-top: 1.25vw;
+    border-radius: 1.2vw;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+}
+
+.movie-info h1 {
+    font-size: 2.1vw;
+}
+
+.movie-info p {
+    font-size: 1.3vw;
+}
+
+.movie-info button {
+    width: 6.4vw;
+    height: 2.9vw;
+    font-size: 1vw;
+    margin-top: 0.4vw;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5vw;
+    background-color: purple;
+}

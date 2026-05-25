@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
-header{
+header {
     height: 9vh;
     background: linear-gradient(to right, purple, purple, red, orange);
 }
 
-h1{
+header h1 {
     font-family: "Lilita One", sans-serif;
     font-weight: 600;
     transform: skewX(-4deg);

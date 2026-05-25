@@ -1,7 +1,7 @@
 import './Header.css';
 
-function Header(){
-    return(
+function Header() {
+    return (
         <header>
             <h1>Movie</h1>
         </header>
