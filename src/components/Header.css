@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+header{
+    height: 9vh;
+    background: linear-gradient(to right, purple, purple, red, orange);
+}
+
+h1{
+    font-family: "Lilita One", sans-serif;
+    font-weight: 600;
+    transform: skewX(-4deg);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.9vw;
+    padding-top: 0.75vw;
+}
