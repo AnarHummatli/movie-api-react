@@ -1,0 +1,27 @@
+.search-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+input{
+    width: 28vw;
+    height: 2.5vw;
+    font-size: 1vw;
+    padding: 0.6vw;
+    border-radius: 0.5vw;
+    border: 0.1vw solid gray;
+}
+
+button{
+    width: 6vw;
+    height: 2.5vw;
+    font-size: 1.3vw;
+    border-radius: 0.5vw;
+    vertical-align: top;
+    margin-left: 1vw;
+    border: none;
+    color: white;
+    background-color: purple;
+    cursor: pointer;
+}
