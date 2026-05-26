@@ -14,7 +14,7 @@ const mainMovies = [
     "tt0102926"
 ];
 
-function Movies({ searchText, addToFavorite }) {
+function Movies({ searchText, addToFavorite, favoriteMovies }) {
     const apiKey = 'e76e5404';
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -59,8 +59,10 @@ function Movies({ searchText, addToFavorite }) {
 
     if (loading) {
         return (
-            <div className="progress-box">
-                <h2>Loading movies... ⏳</h2>
+            <div className="movies-box">
+                <div className="progress-box">
+                    <h2>Loading movies... ⏳</h2>
+                </div>
             </div>
         );
     }
@@ -69,16 +71,24 @@ function Movies({ searchText, addToFavorite }) {
     return (
         <div className="movies-box">
             {movies.length > 0 ? (
-                movies.map((movie) => (
-                    <div className="movie-card" key={movie.imdbID}>
-                        <img src={movie.Poster} alt={movie.Title} />
-                        <div className="movie-info">
-                            <h1>{movie.Title}</h1>
-                            <p><b>Year:</b> {movie.Year}</p>
-                            <button onClick={() => addToFavorite(movie.Title)}>+ Favorite</button>
+                movies.map((movie) => {
+                    const isFavorite = favoriteMovies.includes(movie.Title);
+                    return (
+                        <div className="movie-card" key={movie.imdbID}>
+                            <img src={movie.Poster} alt={movie.Title} />
+                            <div className="movie-info">
+                                <h1>{movie.Title}</h1>
+                                <p><b>Year:</b> {movie.Year}</p>
+                                <button
+                                    onClick={() => addToFavorite(movie.Title)}
+                                    disabled={isFavorite}
+                                >
+                                    {isFavorite ? "Added" : "+ Favorite"}
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                ))
+                    );
+                })
 
             ) : (
                 <div className="progress-box">

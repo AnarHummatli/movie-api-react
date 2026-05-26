@@ -48,9 +48,15 @@
     background-color: purple;
 }
 
+.movie-info button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
 .progress-box {
     width: 100%;
-    height: 30vw;
+    height: 28.5vw;
     padding-top: 2vw;
     padding-left: 3vw;
     font-size: 1.4vw;

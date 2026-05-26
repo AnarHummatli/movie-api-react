@@ -28,6 +28,11 @@ function Main() {
         }
     }
 
+    const deleteFavoriteMovie = (movieTitle) => {
+        const uptadedFavoriteMovies = favoriteMovies.filter(title => title !== movieTitle);
+        setFavoriteMovies(uptadedFavoriteMovies);
+    }
+
     return (
         <main>
             <div className="search-box">
@@ -42,8 +47,15 @@ function Main() {
             </div>
 
             <div className='movies-container'>
-                <Movies searchText={searchText} addToFavorite={addToFavorite} />
-                <FavoriteBox favoriteMovies={favoriteMovies} />
+                <Movies
+                    searchText={searchText}
+                    addToFavorite={addToFavorite}
+                    favoriteMovies={favoriteMovies}
+                />
+                <FavoriteBox
+                    favoriteMovies={favoriteMovies}
+                    deleteFavoriteMovie={deleteFavoriteMovie}
+                />
             </div>
 
         </main>
