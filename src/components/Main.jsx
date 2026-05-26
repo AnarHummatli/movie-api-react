@@ -35,6 +35,10 @@ function Main() {
         setFavoriteMovies(uptadedFavoriteMovies);
     }
 
+    const clearFavoriteList = () => {
+        setFavoriteMovies([]);
+    };
+
     return (
         <main>
             <div className="search-box">
@@ -62,6 +66,7 @@ function Main() {
                 <FavoriteBox
                     favoriteMovies={favoriteMovies}
                     deleteFavoriteMovie={deleteFavoriteMovie}
+                    clearFavoriteList={clearFavoriteList}
                 />
             </div>
 

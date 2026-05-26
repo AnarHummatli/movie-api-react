@@ -83,3 +83,14 @@
 .chosen-movie img:hover {
     opacity: 0.6;
 }
+
+.favorite-box a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.favorite-box a .look-favorite-list {
+    width: 32%;
+}

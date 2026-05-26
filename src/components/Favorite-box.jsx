@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Favorite-box.css';
 
-function FavoriteBox({ favoriteMovies, deleteFavoriteMovie }) {
+function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList }) {
 
     const [titleInput, setTitleInput] = useState("");
 
@@ -11,9 +12,10 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie }) {
 
     const handleSubmitList = () => {
         setTitleInput("");
+        clearFavoriteList();
     };
 
-    const isInputEmpty = titleInput.trim() === "";
+    const isListEmpty = !titleInput.trim() || !favoriteMovies.length;
 
     return (
         <div className="favorite-box">
@@ -37,12 +39,15 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie }) {
             />
             <button
                 className='add-favorite-list'
-                disabled={isInputEmpty}
+                disabled={isListEmpty}
                 onClick={handleSubmitList}
             >
                 Add To Favorite List
             </button>
-            <button className='look-favorite-list'>Look At Favorite List</button>
+
+            <Link to="/favorites">
+                <button className='look-favorite-list'>Look At Favorite List</button>
+            </Link>
         </div>
     );
 }
