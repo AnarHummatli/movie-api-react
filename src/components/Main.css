@@ -27,3 +27,8 @@
     background-color: purple;
     cursor: pointer;
 }
+
+.movies-container {
+    display: flex;
+    justify-content: space-between;
+}

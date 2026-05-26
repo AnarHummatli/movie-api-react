@@ -14,7 +14,7 @@ const mainMovies = [
     "tt0102926"
 ];
 
-function Movies({ searchText }) {
+function Movies({ searchText, addToFavorite }) {
     const apiKey = 'e76e5404';
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -75,7 +75,7 @@ function Movies({ searchText }) {
                         <div className="movie-info">
                             <h1>{movie.Title}</h1>
                             <p><b>Year:</b> {movie.Year}</p>
-                            <button>+ Favorite</button>
+                            <button onClick={() => addToFavorite(movie.Title)}>+ Favorite</button>
                         </div>
                     </div>
                 ))
