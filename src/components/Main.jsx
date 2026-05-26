@@ -8,6 +8,8 @@ function Main() {
     const [searchText, setSearchText] = useState("");
     const [favoriteMovies, setFavoriteMovies] = useState([]);
 
+    const isSearchDisabled = input.trim().length < 3;
+
     const handleInputChange = (e) => {
         setInput(e.target.value);
     };
@@ -17,7 +19,7 @@ function Main() {
     };
 
     const handleKeyDown = (e) => {
-        if (e.key === "Enter") {
+        if (e.key === "Enter" && !isSearchDisabled) {
             handleSearch();
         }
     }
@@ -43,7 +45,12 @@ function Main() {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button
+                    onClick={handleSearch}
+                    disabled={isSearchDisabled}
+                >
+                    Search
+                </button>
             </div>
 
             <div className='movies-container'>

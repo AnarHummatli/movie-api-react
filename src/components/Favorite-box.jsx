@@ -9,6 +9,10 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie }) {
         setTitleInput(e.target.value);
     };
 
+    const handleSubmitList = () => {
+        setTitleInput("");
+    };
+
     const isInputEmpty = titleInput.trim() === "";
 
     return (
@@ -34,6 +38,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie }) {
             <button
                 className='add-favorite-list'
                 disabled={isInputEmpty}
+                onClick={handleSubmitList}
             >
                 Add To Favorite List
             </button>

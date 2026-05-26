@@ -61,7 +61,7 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
         return (
             <div className="movies-box">
                 <div className="progress-box">
-                    <h2>Loading movies... ⏳</h2>
+                    <h2>Loading movies...</h2>
                 </div>
             </div>
         );
@@ -75,7 +75,14 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                     const isFavorite = favoriteMovies.includes(movie.Title);
                     return (
                         <div className="movie-card" key={movie.imdbID}>
-                            <img src={movie.Poster} alt={movie.Title} />
+                            <img
+                                src={movie.Poster !== "N/A" ? movie.Poster : "src/assets/white-bg.svg"}
+                                alt={movie.Title}
+                                onError={e => {
+                                    e.target.onError = null;
+                                    e.target.src = "src/assets/white-bg.svg";
+                                }}
+                            />
                             <div className="movie-info">
                                 <h1>{movie.Title}</h1>
                                 <p><b>Year:</b> {movie.Year}</p>
@@ -92,7 +99,7 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
 
             ) : (
                 <div className="progress-box">
-                    <h2>Movie was not found! 🥺</h2>
+                    <h2>Movie was not found!</h2>
                 </div>
             )}
         </div>
