@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Favorite-box.css';
 
-function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList }) {
+function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, addFavoriteList }) {
 
     const [titleInput, setTitleInput] = useState("");
 
@@ -11,6 +11,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList })
     };
 
     const handleSubmitList = () => {
+        addFavoriteList(titleInput, favoriteMovies);
         setTitleInput("");
         clearFavoriteList();
     };
@@ -20,13 +21,13 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList })
     return (
         <div className="favorite-box">
             <div className='favorite-movies-list'>
-                {favoriteMovies.map((movieTitle, index) => (
-                    <div className='chosen-movie' key={index}>
-                        <p>{movieTitle}</p>
+                {favoriteMovies.map((movie) => (
+                    <div className='chosen-movie' key={movie.imdbID}>
+                        <p>{movie.Title}</p>
                         <img
                             src='src/assets/cancel.svg'
                             alt='cancel-button'
-                            onClick={() => deleteFavoriteMovie(movieTitle)}
+                            onClick={() => deleteFavoriteMovie(movie.imdbID)}
                         />
                     </div>
                 ))}

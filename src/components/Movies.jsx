@@ -20,7 +20,6 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
         if (!searchText) {
             const fetchMovies = mainMovies.map(imdbID => {
                 return fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`)
@@ -54,7 +53,6 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                     setLoading(false);
                 });
         }
-
     }, [searchText]);
 
     if (loading) {
@@ -67,12 +65,11 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
         );
     }
 
-
     return (
         <div className="movies-box">
             {movies.length > 0 ? (
                 movies.map((movie) => {
-                    const isFavorite = favoriteMovies.includes(movie.Title);
+                    const isFavorite = favoriteMovies.some(fav => fav.imdbID === movie.imdbID);
                     return (
                         <div className="movie-card" key={movie.imdbID}>
                             <img
@@ -87,7 +84,7 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                                 <h1>{movie.Title}</h1>
                                 <p><b>Year:</b> {movie.Year}</p>
                                 <button
-                                    onClick={() => addToFavorite(movie.Title)}
+                                    onClick={() => addToFavorite(movie)}
                                     disabled={isFavorite}
                                 >
                                     {isFavorite ? "Added" : "+ Favorite"}
@@ -96,7 +93,6 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                         </div>
                     );
                 })
-
             ) : (
                 <div className="progress-box">
                     <h2>Movie was not found!</h2>
