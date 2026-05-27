@@ -1,0 +1,95 @@
+.favorite-list-page {
+    width: 70vw;
+    margin-top: 3.5vw;
+    padding: 1.3vw;
+    padding-bottom: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    border-radius: 1.2vw;
+    border: 0.1vw solid purple;
+}
+
+.favorite-element {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.favorite-element-box {
+    width: 93.5%;
+    padding: 1.5vw;
+    padding-bottom: 2vw;
+    border-radius: 1.2vw;
+    border: 0.1vw solid black;
+}
+
+.favorite-element-box h3 {
+    font-size: 2vw;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 1.5vw;
+}
+
+.favorite-element-movies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.9vw;
+    width: 100%;
+}
+
+.favorite-element-movies-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-element-movies-box p {
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.favorite-element-movies-box a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    color: black;
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.4vw;
+    border-radius: 0.3vw;
+    border: 0.1vw solid black;
+    cursor: pointer;
+}
+
+.favorite-element img {
+    height: 2.8vw;
+    margin-right: 0.3vw;
+    cursor: pointer;
+}
+
+.favorite-element img:hover {
+    opacity: 0.6;
+}
+
+.back-to-movies-btn {
+    display: flex;
+    justify-self: center;
+    background-color: purple;
+    color: white;
+    font-size: 1.5vw;
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.7vw 1vw;
+    cursor: pointer;
+    margin-top: 1.5vw;
+}
+
+.favorite-list-page a {
+    text-decoration: none;
+}
