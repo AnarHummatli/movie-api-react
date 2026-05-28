@@ -73,7 +73,7 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                     return (
                         <div className="movie-card" key={movie.imdbID}>
                             <img
-                                src={movie.Poster !== "N/A" ? movie.Poster : "src/assets/white-bg.svg"}
+                                src={movie.Poster !== "N/A" ? movie.Poster : '/white-bg.svg'}
                                 alt={movie.Title}
                                 onError={e => {
                                     e.target.onError = null;

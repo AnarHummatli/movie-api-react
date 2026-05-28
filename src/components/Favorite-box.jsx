@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import cancelIcon from '../assets/cancel.svg';
 import './Favorite-box.css';
 
 function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, addFavoriteList, allLists }) {
@@ -28,7 +27,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, a
                     <div className='chosen-movie' key={movie.imdbID}>
                         <p>{movie.Title}</p>
                         <img
-                            src={cancelIcon}
+                            src="/cancel.svg"
                             alt='cancel-button'
                             onClick={() => deleteFavoriteMovie(movie.imdbID)}
                         />
