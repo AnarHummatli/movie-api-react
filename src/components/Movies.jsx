@@ -16,7 +16,7 @@ const mainMovies = [
 ];
 
 function Movies({ searchText, addToFavorite, favoriteMovies }) {
-    const apiKey = 'e76e5404';
+    const apiKey = 'cbb63091';
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
 
