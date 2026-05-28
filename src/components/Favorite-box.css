@@ -29,7 +29,7 @@
     background-color: purple;
     border: none;
     cursor: pointer;
-
+    font-size: 1.15vw;
 }
 
 .add-favorite-list:disabled {
@@ -46,6 +46,7 @@
     background-color: purple;
     border: none;
     cursor: pointer;
+    font-size: 1.15vw;
 }
 
 .look-favorite-list:disabled {
