@@ -1,7 +1,22 @@
 import { Link } from 'react-router-dom';
 import './FavoriteListPage.css';
 
-function FavoriteListPage({ allLists }) {
+function FavoriteListPage({ allLists, deleteFavoriteList }) {
+
+  if (allLists.length == 0) {
+    return (
+      <div className='favorite-list-page'>
+        <div className='empty-favorite-box'>
+          <p>There are no favorite movies yet!</p>
+          <p>Please return to the Movies page to create one.</p>
+        </div>
+        <Link to="/">
+          <button className="back-to-movies-btn">Movies</button>
+        </Link>
+      </div>
+    )
+  }
+
   return (
 
     <div className='favorite-list-page'>
@@ -21,7 +36,11 @@ function FavoriteListPage({ allLists }) {
               ))}
             </div>
           </div>
-          <img src='src/assets/cancel.svg' alt='cancel-button' />
+          <img
+            src='src/assets/cancel.svg'
+            alt='cancel-button'
+            onClick={() => deleteFavoriteList(list.id)}
+          />
         </div>
       ))}
 

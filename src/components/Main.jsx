@@ -3,7 +3,7 @@ import Movies from "./Movies";
 import FavoriteBox from "./Favorite-box";
 import "./Main.css";
 
-function Main({ addFavoriteList }) {
+function Main({ addFavoriteList, allLists }) {
     const [input, setInput] = useState("");
     const [searchText, setSearchText] = useState("");
     const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -22,19 +22,19 @@ function Main({ addFavoriteList }) {
         if (e.key === "Enter" && !isSearchDisabled) {
             handleSearch();
         }
-    }
+    };
 
     const addToFavorite = (movie) => {
         const isAlreadyAdded = favoriteMovies.some(fav => fav.imdbID === movie.imdbID);
         if (!isAlreadyAdded) {
             setFavoriteMovies([...favoriteMovies, movie]);
         }
-    }
+    };
 
     const deleteFavoriteMovie = (imdbID) => {
         const updatedFavoriteMovies = favoriteMovies.filter(movie => movie.imdbID !== imdbID);
         setFavoriteMovies(updatedFavoriteMovies);
-    }
+    };
 
     const clearFavoriteList = () => {
         setFavoriteMovies([]);
@@ -69,6 +69,7 @@ function Main({ addFavoriteList }) {
                     deleteFavoriteMovie={deleteFavoriteMovie}
                     clearFavoriteList={clearFavoriteList}
                     addFavoriteList={addFavoriteList}
+                    allLists={allLists}
                 />
             </div>
         </main>

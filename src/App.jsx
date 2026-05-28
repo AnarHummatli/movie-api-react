@@ -21,14 +21,19 @@ function App() {
     listIdCounter++;
   };
 
+  const deleteFavoriteList = (id) => {
+    const updatedFavoriteList = allLists.filter(list => list.id !== id);
+    setAllLists(updatedFavoriteList);
+  };
+
   return (
     <div className="app">
       <Header />
       <Routes>
-        <Route path='/' element={<Main addFavoriteList={addFavoriteList} />} />
+        <Route path='/' element={<Main addFavoriteList={addFavoriteList} allLists={allLists} />} />
         <Route
           path="/favorites"
-          element={<FavoriteListPage allLists={allLists} />}
+          element={<FavoriteListPage allLists={allLists} deleteFavoriteList={deleteFavoriteList} />}
         />
       </Routes>
     </div>
