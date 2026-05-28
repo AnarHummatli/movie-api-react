@@ -27,7 +27,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, a
                     <div className='chosen-movie' key={movie.imdbID}>
                         <p>{movie.Title}</p>
                         <img
-                            src="/cancel.svg"
+                            src={`${import.meta.env.BASE_URL}cancel.svg`}
                             alt='cancel-button'
                             onClick={() => deleteFavoriteMovie(movie.imdbID)}
                         />

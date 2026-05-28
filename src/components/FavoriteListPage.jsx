@@ -37,7 +37,7 @@ function FavoriteListPage({ allLists, deleteFavoriteList }) {
             </div>
           </div>
           <img
-            src="/cancel.svg"
+            src={`${import.meta.env.BASE_URL}cancel.svg`}
             alt='cancel-button'
             onClick={() => deleteFavoriteList(list.id)}
           />
