@@ -18,26 +18,22 @@ function FavoriteListPage({ allLists, deleteFavoriteList }) {
   }
 
   return (
-
     <div className='favorite-list-page'>
-
       {allLists.map((list) => (
         <div className='favorite-element' key={list.id}>
           <div className='favorite-element-box'>
             <h3>{list.name}</h3>
             <div className='favorite-element-movies-list'>
-
               {list.movies.map((movie) => (
                 <div className='favorite-element-movies-box' key={movie.imdbID}>
                   <p>{movie.Title}</p>
-                  <a
-                    href={`https://www.imdb.com/title/${movie.imdbID}/`} target='_blank'>IMDB</a>
+                  <a href={`https://www.imdb.com/title/${movie.imdbID}/`} target='_blank'>IMDB</a>
                 </div>
               ))}
             </div>
           </div>
           <img
-            src={`${import.meta.env.BASE_URL}cancel.svg`}
+            src="cancel.svg"
             alt='cancel-button'
             onClick={() => deleteFavoriteList(list.id)}
           />
@@ -47,7 +43,6 @@ function FavoriteListPage({ allLists, deleteFavoriteList }) {
       <Link to="/">
         <button className="back-to-movies-btn">Movies</button>
       </Link>
-
     </div>
   )
 }

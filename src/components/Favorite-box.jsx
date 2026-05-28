@@ -16,7 +16,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, a
         clearFavoriteList();
     };
 
-    const isListEmpty = allLists.length === 0;;
+    const isListEmpty = allLists.length === 0;
 
     const isButtonDisabled = !titleInput.trim() || !favoriteMovies.length;
 
@@ -27,7 +27,7 @@ function FavoriteBox({ favoriteMovies, deleteFavoriteMovie, clearFavoriteList, a
                     <div className='chosen-movie' key={movie.imdbID}>
                         <p>{movie.Title}</p>
                         <img
-                            src={`${import.meta.env.BASE_URL}cancel.svg`}
+                            src="cancel.svg"
                             alt='cancel-button'
                             onClick={() => deleteFavoriteMovie(movie.imdbID)}
                         />
