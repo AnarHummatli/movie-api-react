@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import cancelIcon from '../assets/cancel.svg';
 import './FavoriteListPage.css';
 
 function FavoriteListPage({ allLists, deleteFavoriteList }) {
@@ -33,7 +34,7 @@ function FavoriteListPage({ allLists, deleteFavoriteList }) {
             </div>
           </div>
           <img
-            src="cancel.svg"
+            src={cancelIcon}
             alt='cancel-button'
             onClick={() => deleteFavoriteList(list.id)}
           />

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import whiteBg from '../assets/white-bg.svg';
 import './Movies.css';
 
 const mainMovies = [
@@ -73,11 +74,11 @@ function Movies({ searchText, addToFavorite, favoriteMovies }) {
                     return (
                         <div className="movie-card" key={movie.imdbID}>
                             <img
-                                src={movie.Poster !== "N/A" ? movie.Poster : "white-bg.svg"}
+                                src={movie.Poster !== "N/A" ? movie.Poster : whiteBg}
                                 alt={movie.Title}
                                 onError={(e) => {
                                     e.target.onerror = null;
-                                    e.target.src = "white-bg.svg";
+                                    e.target.src = whiteBg;
                                 }}
                             />
                             <div className="movie-info">
